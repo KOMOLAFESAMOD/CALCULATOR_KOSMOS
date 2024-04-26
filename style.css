@@ -1,0 +1,95 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    box-sizing: border-box;
+}
+body{
+    background: #222;
+    color: #fff;
+}
+.glitch{
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 100px;
+    letter-spacing: 8px;
+    cursor: pointer;
+    text-align: center;
+}
+.glitch::before, .glitch::after{
+    content: 'KOSMOS CALCULATOR';
+    display: block;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+}
+.glitch:hover::before{
+    animation: glitch 0.3s linear 6;
+    color: #e91e63;
+    z-index: -2;
+}
+
+.glitch:hover::after{
+    animation: glitch 0.3s linear 6 reverse;
+    color: #2196f3;
+    z-index: -1;
+}
+@keyframes glitch{
+   0%{
+    top: 0;
+    left: 0;
+   }
+   20%{
+    top: -5px;
+    left: -5px;
+   }
+   40%{
+    top: 5px;
+    left: 5px;
+   }
+   60%{
+    top: -5px;
+    left: 5px;
+   }
+   80%{
+    top: 5px;
+    left: -5px;
+   }
+   100%{
+    top: 0;
+    left: 0;
+   }
+   
+}
+.but{
+    position: absolute;
+    top: 70%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    cursor: pointer;
+    width: 270px;
+    border-radius:10px;
+    height: 60px;
+    font-weight: bold;
+    border: none;
+    color: white;
+    background-color:  #e91e63;
+    font-size: 20px;
+}
+.but a{
+    text-decoration: none;
+    color: white;
+    cursor: pointer;
+}
+@media screen and (max-width:768px) {
+    .glitch{
+        font-size: 48px;
+        font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        top: 30%;
+    }
+    .but{
+        margin-top: -200px;
+    }
+}
